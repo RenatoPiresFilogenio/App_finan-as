@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// npx prisma migrate dev (passa os atributos a tabela sendo referenciado pelo map)
+model User {
+  id         String     @id @default(uuid())
+  name       String
+  email      String     @unique
+  password   String
+  created_at DateTime   @default(now())
+  updated_at DateTime   @default(now())
+  categories Category[]
+
+  @@map("user")
+}
+
+model Category {
+  id         String   @id @default(uuid())
+  name       String
+  userId     String
+  amount     Float
+  user       User     @relation(fields: [userId], references: [id])
+  items      Item[]
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  @@map("category")
+}
+
+model Item {
+  id         String   @id @default(uuid())
+  name       String
+  amount     Float
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  @@map("item")
+}
