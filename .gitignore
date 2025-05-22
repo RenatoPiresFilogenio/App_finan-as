@@ -26,6 +26,7 @@ pids
 # Prisma generated client (compilado)
 /node_modules/.prisma/
 /prisma/generated/
+/src/generated/
 
 # Build output
 /dist/

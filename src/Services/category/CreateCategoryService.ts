@@ -8,8 +8,8 @@ interface CategoryProp{
 class CreateCategoryService{
     async execute({name,userId  }:CategoryProp){
 
-        if(!name){
-            throw new Error("sem nome na categoria")
+        if(!name || !userId){
+            throw new Error("sem nome na categoria ou id nao identificado")
         }
 
         const createCategory = await prismaClient.category.create({

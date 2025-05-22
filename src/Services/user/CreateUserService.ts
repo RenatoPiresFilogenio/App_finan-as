@@ -17,7 +17,7 @@ async execute({email,name,password}:CreateUser){
         throw new Error("Email ou senha incorreto")
     }
 
-    const userExist = await prismaClient.users.findFirst({
+    const userExist = await prismaClient.user.findFirst({
         where:{
             email:email
         }
@@ -29,7 +29,7 @@ async execute({email,name,password}:CreateUser){
 
     const hashingpassword = await hash(password,8)
 
-    const user = await prismaClient.users.create({
+    const user = await prismaClient.user.create({
         data:{
             name:name,
             email:email,

@@ -7,7 +7,7 @@ interface UserProp{
 class DetailUserService{
     async execute({id}:UserProp){
 
-        const userExist = await prismaClient.users.findFirst({
+        const userExist = await prismaClient.user.findFirst({
         where:{
             id:id
         },

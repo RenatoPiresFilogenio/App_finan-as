@@ -12,17 +12,17 @@ async execute({id}:UserProp){
       throw new Error("ID inexistente")        
     }
 
-   const idUser = await prismaClient.users.findFirst({
+   const idUser = await prismaClient.user.findFirst({
     where:{
         id:id
     }
    })
 
-   if(!idUser){
-    throw new Error("ID inexistente") 
-   }
+    if(!idUser){
+        throw new Error("ID inexistente") 
+    }
 
-   const deleteUser = await prismaClient.users.delete({
+   const deleteUser = await prismaClient.user.delete({
     where:{
         id:idUser.id
     }

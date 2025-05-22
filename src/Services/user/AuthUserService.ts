@@ -10,7 +10,7 @@ interface authProps{
 class AuthUserService{
     async execute({email,password}:authProps){
 
-        const user = await prismaClient.users.findFirst({
+        const user = await prismaClient.user.findFirst({
             where:{
                 email: email
             }

@@ -30,7 +30,7 @@ model Category {
   id         String     @id @default(uuid())
   name       String
   userId     String
-  amount Float
+  total Float @default(0)
   user       User       @relation(fields: [userId], references: [id])
   items      Item[]
   created_at DateTime  @default(now())
