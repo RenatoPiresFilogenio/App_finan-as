@@ -10,6 +10,7 @@ import { ListCategoryController } from './Controllers/category/ListCategoryContr
 import { DeleteCategoryController } from './Controllers/category/DeleteCategoryController';
 import { CreateItemController } from './Controllers/items/CreateItemController';
 import { DeleteItemController } from './Controllers/items/DeleteItemController';
+import { DetailItemController } from './Controllers/items/DetailItemController';
 const router = Router();
 // rotas do usuário
 router.post("/users", new CreateUserController().handle)
@@ -24,6 +25,7 @@ router.delete("/deleteCategory", isAuthenticated, new DeleteCategoryController()
 // rotas produtos
 router.post("/createItem", isAuthenticated, new CreateItemController().handle)
 router.delete("/deleteItem", isAuthenticated, new DeleteItemController().handle)
+router.get("/detailItem" , isAuthenticated, new DetailItemController().handle)
 
 /// export
 export {router};
