@@ -13,8 +13,8 @@ import { DeleteItemController } from './Controllers/items/DeleteItemController';
 import { DetailItemController } from './Controllers/items/DetailItemController';
 const router = Router();
 // rotas do usuário
-router.post("/users", new CreateUserController().handle)
-router.post("/session", new AuthUserController().handle)
+router.post("/users", new CreateUserController().handle) // cria user
+router.post("/session", new AuthUserController().handle) // autentica user
 router.get("/detail",  isAuthenticated, new DetailUserController().handle)
 router.delete("/deleteUser", isAuthenticated, new DeleteUserController().handle)
 // rotas categoria
