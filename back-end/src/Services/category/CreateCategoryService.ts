@@ -6,7 +6,7 @@ interface CategoryProp{
 }
 
 class CreateCategoryService{
-    async execute({name,userId  }:CategoryProp){
+    async execute({name,userId }:CategoryProp){
 
         if(!name || !userId){
             throw new Error("sem nome na categoria ou id nao identificado")
