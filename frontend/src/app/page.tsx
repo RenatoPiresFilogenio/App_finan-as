@@ -3,6 +3,8 @@ import Link from "next/link"
 import Btn_Submit from "@/Components/buttonSubmit/button"
 import {api} from "@/services/api"
 import { redirect } from 'next/navigation'
+import { cookies } from 'next/headers';
+
 export default function signup(){
   
 async function  handleLogin(formData:FormData) {
@@ -21,6 +23,18 @@ async function  handleLogin(formData:FormData) {
           email,
           password
         })
+        if(!response.data.token){
+          return;
+        }
+        const cookie = await cookies();
+        const cookie_time = 60 * 60 * 24 * 30 * 1000
+        cookie.set("session", response.data.token,{
+          maxAge: cookie_time,
+          path: "/",
+          httpOnly: false,
+          secure: process.env.NODE_ENV === "production"
+        })
+
         } catch (error) {
           console.log(error)
           return;

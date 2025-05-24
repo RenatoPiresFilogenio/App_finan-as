@@ -3,12 +3,12 @@ import { DetailCategoryService} from "../../Services/category/DetailCategoryServ
 
 class DetailCategoryControler {
     async handle(req:Request,res:Response){
-        const {name} = req.body
+        const {id} = req.body
         const userId = req.userId as string; 
         const detailCategoryService = new DetailCategoryService();
 
         const DetailCategory = await detailCategoryService.execute({
-            name,
+            id,
             userId
         })
         

@@ -1,19 +1,19 @@
 import prismaClient from "../../../prisma";
 interface CategoryProp{
-    name:string;
+    id:string;
     userId:string;
 }
 
 class DetailCategoryService {
-    async execute({ name, userId }: CategoryProp) {
+    async execute({ id, userId }: CategoryProp) {
        
-        if(!name || !userId){
+        if(!id || !userId){
             throw new Error("sem nome na categoria ou id nao identificado")
         }
 
         const DetailCategory = await prismaClient.category.findMany({
             where: {
-                name,
+                id,
                 userId
             },
             select:{

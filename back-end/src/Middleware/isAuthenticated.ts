@@ -27,7 +27,7 @@ export function isAuthenticated(req: Request, res: Response, next: NextFunction)
     ) as IdSub;
 
     req.userId = sub;  
-    console.log(sub);
+  
 
     return next();
   } catch (error) {
