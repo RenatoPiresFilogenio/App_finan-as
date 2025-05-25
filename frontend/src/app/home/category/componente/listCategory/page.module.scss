@@ -1,5 +1,5 @@
 .section_list {
-  background-color: #f8f9fa; // Cinza bem claro, menos agressivo aos olhos
+  background-color: #f8f9fa;
   padding: 2rem;
   margin: 2rem auto;
   border-radius: 12px;
@@ -24,6 +24,9 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
       &:hover {
         transform: translateY(-3px);
@@ -32,6 +35,34 @@
 
       font-size: 1.1rem;
       color: #555;
+
+      .button_group {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .icon_button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.3rem;
+        border-radius: 4px;
+        transition: background 0.2s ease;
+
+        &:hover {
+          background: #f0f0f0;
+        }
+
+        svg {
+          display: block;
+          color: #333;
+        }
+      }
     }
   }
+}
+.buttons_group {
+  display: inline-flex;  
+  gap: 8px;             
+  margin-left: 8px;      
 }

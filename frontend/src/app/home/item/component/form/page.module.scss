@@ -1,0 +1,53 @@
+.formSection {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff; // fundo branco
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1); // borda leve preta
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #000000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.formTitle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #2980b9;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.formLabel {
+  font-weight: 600;
+  color: #333333; // cor mais escura para melhor contraste
+}
+
+.formSelect,
+.formInput {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #cccccc; // borda cinza clara
+  background-color: #ffffff; // fundo branco
+  color: #000000; // texto preto
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #61dafb;
+    box-shadow: 0 0 6px #61dafb;
+  }
+}
+
+.formButtonWrapper {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}

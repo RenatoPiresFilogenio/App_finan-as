@@ -22,7 +22,7 @@ export default function Header() {
         <Link href="/home/category">
         <button>Categorias</button>
         </Link>
-        <Link href="/item">
+        <Link href="/home/item">
         <button>Items</button>
         </Link>
         <Link href="/"><button><LogOutIcon/></button></Link>
