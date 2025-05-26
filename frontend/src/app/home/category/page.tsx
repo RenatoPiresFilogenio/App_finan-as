@@ -9,7 +9,7 @@ export default async function Category() {
   return (
     <main className={style.main_page}>
      
-        <Link href={`/`}>
+        <Link href={`/home/categoryDetail`}>
           <button className={style.viewButton}>Visualizar categorias</button>
         </Link>
         

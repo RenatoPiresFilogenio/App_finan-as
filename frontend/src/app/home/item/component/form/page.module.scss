@@ -2,9 +2,9 @@
   max-width: 400px;
   margin: 2rem auto;
   padding: 1.5rem;
-  background-color: #ffffff; // fundo branco
+  background-color: #ffffff; 
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.1); // borda leve preta
+  border: 1px solid rgba(0, 0, 0, 0.1); 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: #000000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -26,16 +26,16 @@
 
 .formLabel {
   font-weight: 600;
-  color: #333333; // cor mais escura para melhor contraste
+  color: #333333; 
 }
 
 .formSelect,
 .formInput {
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
-  border: 1px solid #cccccc; // borda cinza clara
-  background-color: #ffffff; // fundo branco
-  color: #000000; // texto preto
+  border: 1px solid #cccccc; 
+  background-color: #ffffff; 
+  color: #000000; 
   font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 

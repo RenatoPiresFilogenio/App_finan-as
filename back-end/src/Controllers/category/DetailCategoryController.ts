@@ -3,7 +3,7 @@ import { DetailCategoryService} from "../../Services/category/DetailCategoryServ
 
 class DetailCategoryControler {
     async handle(req:Request,res:Response){
-        const {id} = req.body
+        const { id } = req.params;
         const userId = req.userId as string; 
         const detailCategoryService = new DetailCategoryService();
 

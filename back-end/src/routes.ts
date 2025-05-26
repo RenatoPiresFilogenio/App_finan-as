@@ -19,7 +19,7 @@ router.get("/detail",  isAuthenticated, new DetailUserController().handle)
 router.delete("/deleteUser", isAuthenticated, new DeleteUserController().handle)
 // rotas categoria
 router.post("/category",  isAuthenticated, new CreateCategoryController().handle)
-router.get("/detailCategory",  isAuthenticated, new DetailCategoryControler().handle)
+router.get("/detailCategory/:id",  isAuthenticated, new DetailCategoryControler().handle)
 router.get("/ListCategory",  isAuthenticated, new ListCategoryController().handle)
 router.delete("/deleteCategory", isAuthenticated, new DeleteCategoryController().handle)
 // rotas produtos

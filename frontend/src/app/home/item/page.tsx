@@ -1,6 +1,6 @@
+import { api } from "@/services/api";
 import FORM from "./component/form/form";
 import style from "./page.module.scss";
-import { api } from "@/services/api";
 import { getCookieServer } from "@/lib/cookieServer";
 
 export default async function item() {
