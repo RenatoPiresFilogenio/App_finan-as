@@ -6,7 +6,7 @@ interface Props{
 }
 
 export default  async function  categoryPage({params}:Props){
-   const { id } = await params;
+   const { id } = params;
     const token = await getCookieServer();
 
      const response = await api.get(`/detailCategory/${id}`, {
@@ -15,8 +15,10 @@ export default  async function  categoryPage({params}:Props){
         }
     });
 
-    console.log(response.data)
     return(
-        <Form category={response.data[0]}/>
+        <Form 
+        category={response.data[0]} 
+        token={token as string} 
+    />
     );
 }

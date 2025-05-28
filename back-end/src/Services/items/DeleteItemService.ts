@@ -18,6 +18,9 @@ class DeleteItemService{
                     userId:userid
                 }
             },
+            include:{
+                category:true
+            }
         })
 
         if(!findItem){
@@ -29,7 +32,28 @@ class DeleteItemService{
                 id:findItem.id
             }
         })
-        return deleteItem
+        const itemsRestantes = await prismaClient.item.findMany({
+      where: {
+        categoryId: findItem.categoryId,
+      },
+      select: {
+        amount: true,
+      },
+    });
+
+    const newTotal = itemsRestantes.reduce((acc, item) => acc + item.amount, 0);
+
+    // Atualiza o total na categoria
+    await prismaClient.category.update({
+      where: {
+        id: findItem.categoryId,
+      },
+      data: {
+        total: newTotal,
+      },
+    });
+
+    return { message: "Item deletado e total atualizado" };
     }
 }
 

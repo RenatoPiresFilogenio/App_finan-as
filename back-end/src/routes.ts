@@ -24,7 +24,7 @@ router.get("/ListCategory",  isAuthenticated, new ListCategoryController().handl
 router.delete("/deleteCategory", isAuthenticated, new DeleteCategoryController().handle)
 // rotas produtos
 router.post("/createItem", isAuthenticated, new CreateItemController().handle)
-router.delete("/deleteItem", isAuthenticated, new DeleteItemController().handle)
+router.delete("/deleteItem/:id", isAuthenticated, new DeleteItemController().handle)
 router.get("/detailItem" , isAuthenticated, new DetailItemController().handle)
 
 /// export
